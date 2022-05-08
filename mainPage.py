@@ -14,7 +14,7 @@ mainFrame = ttk.Frame(root, relief= 'sunken', borderwidth= 50, width= 500, heigh
 mainFrame.grid(row= 0, column=0)
 
 path = os.path.dirname(os.path.abspath(__file__))
-welcome_pic = ImageTk.PhotoImage(Image.open(path + 'Python.png').resize((200, 200)))
+welcome_pic = ImageTk.PhotoImage(Image.open(path + '\Python.png').resize((200, 200)))
 welcome_Message = ttk.Label(mainFrame, text= "welcome to lingebra", image= welcome_pic)
 welcome_Message.grid(row= 0, column= 0, pady= 15)
 
