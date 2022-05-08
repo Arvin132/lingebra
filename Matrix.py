@@ -12,7 +12,7 @@ class Matrix :
         if(self.columns != len(lst) or index > self.rows) :
             return False
         
-
+        
         for i in range(self.columns):
             self.data[index][i] = lst[i]
         return True

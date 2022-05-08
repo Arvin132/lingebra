@@ -28,8 +28,10 @@ mat_list_frame = tk.Frame(mainWindow, width= 400, height= 250, borderwidth=5, re
 mat_list_frame.grid(row=1, column=1)
 mat_list : list[Matrix] = []
 def update_mat_frame():
+    i = 0
     for matrix in mat_list:
-        tk.Button(mat_list_frame).grid()
+        tk.Button(mat_list_frame, width= 25, borderwidth= 5,relief= 'raised', text= matrix.name).grid(column= 0, row= i)
+        i += 1
 #tool set frame
 tool_set_frame = tk.Frame(mainWindow, width= 500, height= 50, borderwidth=5, relief= 'sunken', background= '#9A9A9A')
 tool_set_frame.grid(row=0, column=0, columnspan= 2)
