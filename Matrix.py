@@ -1,10 +1,10 @@
 import numpy as np
 
 class Matrix :
-    def __init__(self ,row: int, columns: int) :
-        self.rows = row
+    def __init__(self ,rows: int, columns: int) :
+        self.rows = rows
         self.columns = columns
-        self.data = np.zeros((row, columns))
+        self.data = np.zeros((rows, columns))
         self.name = "Unkown"
     
     def update_row(self, lst: list[int], index: int):
