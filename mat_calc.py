@@ -8,7 +8,7 @@ from mainPage import root, Matrix_calc
 #below is the implemantation of the main window
 global mainWindow
 mainWindow = tk.Toplevel(root)
-mainWindow.geometry('500x550')
+mainWindow.geometry('500x250')
 
 #implementation of oporations
 operation_frame = tk.Frame(mainWindow, width= 100, height= 250, borderwidth= 5, relief= 'sunken', background= '#626262')
