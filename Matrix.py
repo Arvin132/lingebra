@@ -5,6 +5,7 @@ class Matrix :
         self.rows = row
         self.columns = columns
         self.data = np.zeros((row, columns))
+        self.name = "Unkown"
     
     def update_row(self, lst: list[int], index: int):
         index -= 1

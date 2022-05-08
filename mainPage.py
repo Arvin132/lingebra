@@ -20,7 +20,7 @@ welcome_Message.grid(row= 0, column= 0, pady= 15)
 
 def run_mat_calc() :
     Matrix_calc['state'] = tk.DISABLED
-    exec(open(path + "\mat_calc.py").read())
+    exec(open(path +"\mat_calc.py").read())
 
 global Matrix_calc
 Matrix_calc = tk.Button(mainFrame, text= "Matrix calcultor", width= 18, command= run_mat_calc)
