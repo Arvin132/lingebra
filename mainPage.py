@@ -15,7 +15,7 @@ root = tk.Tk()
 root.title("lingebra main page")
 
 #frame consiting of all of the page buttons
-mainFrame = ttk.Frame(root, relief= 'sunken', borderwidth= 50, width= 500, height = 400)
+mainFrame = ttk.Frame(root, relief= 'sunken', borderwidth= 50, width= 500, height= 400)
 mainFrame.grid(row= 0, column=0)
 
 #the BIG python image

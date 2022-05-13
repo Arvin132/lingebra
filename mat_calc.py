@@ -62,16 +62,33 @@ m3.update_row([1,2,3],1)
 m3.update_row([4,5,6],2)
 m3.update_row([7,8,9],3)
 m3.name = "C"
-mat_list : set[Matrix] = {m1,m2,m3,m1}
+mat_list : list[Matrix] = [m1,m2,m3,m1, m2]
+mat_button_list : list[tk.Button] = []
 
-def update_mat_frame(lst: list[Matrix]):
+def update_mat_frame(mat_list: list[Matrix], but_list: list[tk.Button]):
     i = 0
     j = 0
-    for matrix in lst:
-        bt =tk.Button(mat_list_frame, width= 12 , borderwidth= 4,relief= 'raised', text= matrix.name)
+    for matrix in mat_list:
+        bt =tk.Button(mat_list_frame, 
+                      width= 12 , 
+                      borderwidth= 4,
+                      relief= 'raised', 
+                      text= matrix.name)
         bt.grid(column=j, row=i)
+        but_list.append(bt)
         j += 1
-update_mat_frame(mat_list)
+        if (j == 4):
+            j = 0
+            i += 1
+
+def clear_mat_frame(but_list: list[tk.Button] = mat_button_list):
+    for button in but_list:
+        button.grid_remove()
+    but_list.clear()
+
+update_mat_frame(mat_list, mat_button_list)
+
+
 
 #tool set frame
 tool_set_frame = tk.Frame(mainWindow, 
@@ -87,10 +104,7 @@ add_mat_button = tk.Button(tool_set_frame,
                            width= 10, 
                            height= 2,
                            text= "NEW")
-add_mat_button.grid(row=1, column=1)
-
-
-
+add_mat_button.grid(row=0, column=0)
 
 #this code edits what will happend when the top level is closed
 def close_command():
