@@ -100,11 +100,26 @@ tool_set_frame = tk.Frame(mainWindow,
 tool_set_frame.grid_propagate(False)
 tool_set_frame.grid(row=0, column=0, columnspan= 2)
 
+def mat_add_but_func():
+    new = tk.Toplevel(mainWindow)
+    new.geometry("200x200")
+
+    rows = ttk.Entry(new)
+    rows.grid(column=0, row=0)
+    columns = ttk.Entry(new)
+    columns.grid(column=1, row=0)
+
+    cancel = ttk.Button(new,
+                        command= lambda : new.destroy())
+    cancel.grid(row=1, column= 2, sticky= (tk.S, tk.E)) 
 add_mat_button = tk.Button(tool_set_frame, 
                            width= 10, 
                            height= 2,
-                           text= "NEW")
+                           text= "NEW",
+                           command= mat_add_but_func)
 add_mat_button.grid(row=0, column=0)
+
+
 
 #this code edits what will happend when the top level is closed
 def close_command():
