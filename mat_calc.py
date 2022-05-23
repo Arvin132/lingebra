@@ -1,8 +1,8 @@
 from PIL import ImageTk, Image
 import tkinter as tk
 from tkinter import ttk
-from mainPage import root, Matrix_calc, path
 from Matrix import Matrix
+from mainPage import root, Matrix_calc
 
 
 #below is the implemantation of the main window
@@ -102,16 +102,30 @@ tool_set_frame.grid(row=0, column=0, columnspan= 2)
 
 def mat_add_but_func():
     new = tk.Toplevel(mainWindow)
-    new.geometry("200x200")
+    new.geometry("250x200")
 
-    rows = ttk.Entry(new)
-    rows.grid(column=0, row=0)
-    columns = ttk.Entry(new)
-    columns.grid(column=1, row=0)
+    rows = ttk.Entry(new,
+                     width= 10)
+    row_label = ttk.Label(new,
+                          text="Rows:",
+                          width= 5)
+    row_label.grid(row=0, column=0)
+    rows.grid(column=1, row=0)
+    columns = ttk.Entry(new,
+                        width= 10)
+    column_label = ttk.Label(new,
+                          text="Columns:",
+                          width= 8)
+    column_label.grid(row=0, column=2)
+    columns.grid(column=3, row=0)
 
-    cancel = ttk.Button(new,
-                        command= lambda : new.destroy())
-    cancel.grid(row=1, column= 2, sticky= (tk.S, tk.E)) 
+    cancel = tk.Button(new,
+                        text="Cancel",
+                        command= lambda : new.destroy(),
+                        width= 10,
+                        height= 3)
+    cancel.grid(row= 4, column= 3, sticky= (tk.S, tk.E),
+                pady= 100) 
 add_mat_button = tk.Button(tool_set_frame, 
                            width= 10, 
                            height= 2,
