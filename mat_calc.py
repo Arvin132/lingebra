@@ -1,6 +1,6 @@
-from PIL import ImageTk, Image
 import tkinter as tk
 from tkinter import ttk
+from tkinter import font
 from Matrix import Matrix
 from mainPage import root, Matrix_calc
 
@@ -126,6 +126,11 @@ def mat_add_but_func():
                         height= 3)
     cancel.grid(row= 4, column= 3, sticky= (tk.S, tk.E),
                 pady= 100) 
+    confirm = tk.Button(new,
+                        text= "confirm",
+                        width= 10,
+                        height= 3)
+    confirm.grid(row=4, column=2)
 add_mat_button = tk.Button(tool_set_frame, 
                            width= 10, 
                            height= 2,
