@@ -1,2 +1,9 @@
 #ignore the cache files
+./Input
 ./__pycache__
+./txtOutput
+./normalizingInput
+./SomeOutput
+./broil.csv
+./for tests/*
+./test.py
